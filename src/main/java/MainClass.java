@@ -119,83 +119,83 @@ public class MainClass {
         throw new ArrayIndexOutOfBoundsException("Not find element");
     }
 
-//Задача 11. Конвертация в двоичную систему
-        public static void conversionToBinarySystem ( int num){
-            if (num < 0) throw new IllegalArgumentException("Число отрицательное");
-            int b;
-            String temp = "";
-            while (num != 0) {
-                b = num % 2;
-                temp = b + temp;
-                num = num / 2;
-            }
-            System.out.print(temp);
+    //Задача 11. Конвертация в двоичную систему
+    public static void conversionToBinarySystem(int num) {
+        if (num < 0) throw new IllegalArgumentException("Число отрицательное");
+        int b;
+        String temp = "";
+        while (num != 0) {
+            b = num % 2;
+            temp = b + temp;
+            num = num / 2;
         }
-
-//Задача 12. Проверка делимости
-        public static void checkingTheDivisibility ( int fNum, int sNum){
-            if (fNum % sNum == 0) {
-                System.out.println("Числа делятся друг на друга");
-            } else {
-                System.out.println("Числа не делятся друг на друга");
-            }
-            if (sNum == 0) throw new ArithmeticException("Делитель равень нулю");
-
-        }
-
-//Задача 13. Чтение элемента списка
-public static void returnsTheListElementByIndex(int index) {
-    try {
-        ArrayList<String> array = new ArrayList<>(Arrays.asList("1", "2", "3"));
-        System.out.println(array.get(index));
-    } catch (IndexOutOfBoundsException e) {
-        throw new IndexOutOfBoundsException("Выход за пределы массива");
+        System.out.print(temp);
     }
-}
 
-//Задача 14. Парольная проверка
-public static void checkPassword(String pass) throws WeakPasswordException {
-    if (pass.length() < 8) {
-        throw new WeakPasswordException("Пароль ненадежный");
-    }
-}
+    //Задача 12. Проверка делимости
+    public static void checkingTheDivisibility(int fNum, int sNum) {
 
-//Задача 15. Проверка даты
-        public static void checkDate (String date){
-        }
-
-//Задача 16. Конкатенация строк
-public static void stringConcatenation(String fStr, String sStr) {
-    System.out.println(fStr + sStr);
-    if (fStr.isEmpty() || sStr.isEmpty()) throw new NullPointerException("Одна из строк равна null");
-
-
-}
-
-//Задача 17. Остаток от деления
-        public static void remainderOfDivision ( int fNum, int sNum){
-            System.out.println(fNum % sNum);
-            if (sNum == 0) throw new ArithmeticException("Второе число равно нулю");
-        }
-
-//Задача 18. Квадратный корень
-        public static void squareRootOfANumber ( int num){
-            System.out.println(Math.pow(num, 0.5));
-            if (num < 0) throw new IllegalArgumentException("Число меньше нуля");
-        }
-
-//Задача 19. Конвертер температуры
-        public static void celsiusToFahrenheit ( int c){
-            double f = ((c * 9) / 5) + 32;
-            if (f < 0) throw new ArithmeticException("Меньше нуля");
-            System.out.println(f);
-        }
-
-//Задача 20. Проверка строки на пустоту
-        public static void checkingForNull (String str){
-            if (str.isEmpty()) throw new NullPointerException("Строка пуста");
+        if (sNum == 0) {
+            throw new ArithmeticException("Делитель равень нулю");
+        } else if (fNum % sNum == 0) {
+            System.out.println("Числа делятся друг на друга");
+        } else {
+            System.out.println("Числа не делятся друг на друга");
         }
     }
+
+    //Задача 13. Чтение элемента списка
+    public static void returnsTheListElementByIndex(int index) {
+        try {
+            ArrayList<String> array = new ArrayList<>(Arrays.asList("1", "2", "3"));
+            System.out.println(array.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            throw new IndexOutOfBoundsException("Выход за пределы массива");
+        }
+    }
+
+    //Задача 14. Парольная проверка
+    public static void checkPassword(String pass) throws WeakPasswordException {
+        if (pass.length() < 8) {
+            throw new WeakPasswordException("Пароль ненадежный");
+        }
+    }
+
+    //Задача 15. Проверка даты
+    public static void checkDate(String date) {
+    }
+
+    //Задача 16. Конкатенация строк
+    public static void stringConcatenation(String fStr, String sStr) {
+        System.out.println(fStr + sStr);
+        if (fStr.isEmpty() || sStr.isEmpty()) throw new NullPointerException("Одна из строк равна null");
+
+
+    }
+
+    //Задача 17. Остаток от деления
+    public static void remainderOfDivision(int fNum, int sNum) {
+        System.out.println(fNum % sNum);
+        if (sNum == 0) throw new ArithmeticException("Второе число равно нулю");
+    }
+
+    //Задача 18. Квадратный корень
+    public static void squareRootOfANumber(int num) {
+        System.out.println(Math.pow(num, 0.5));
+        if (num < 0) throw new IllegalArgumentException("Число меньше нуля");
+    }
+
+    //Задача 19. Конвертер температуры
+    public static void celsiusToFahrenheit(int c) {
+        double f = ((c * 9) / 5) + 32;
+        if (f < 0) throw new ArithmeticException("Меньше нуля");
+    }
+
+    //Задача 20. Проверка строки на пустоту
+    public static void checkingForNull(String str) {
+        if (str.isEmpty()) throw new NullPointerException("Строка пуста");
+    }
+}
 
 //Собственное исключение
 class WeakPasswordException extends Exception {
